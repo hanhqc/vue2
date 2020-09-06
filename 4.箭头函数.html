@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="js/vue.min.js"></script>
+<script>
+    function add(a,b) {
+        console.log(a + b)
+    }
+    add(1,2);
+
+    let a1 = function (a,b) {
+        console.log(a * b)
+    }
+    a1(2,3)
+
+    let a2 = (a,b) => console.log(a / b)
+    a2(6,2)
+
+    let a3 = function(a,b){
+        console.log(a + b)
+        console.log(a - b)
+    }
+    a3(9,1)
+
+    let a4 = (a,b) =>{
+        console.log(a * b)
+        console.log(a / b)
+    }
+    a4(9,3)
+
+</script>
+
+</body>
+</html>

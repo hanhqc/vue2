@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="d1">
+
+    <first id="hh"></first>
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    let first = {
+        template:`
+            <div>
+                分页组件
+                <h4>{{cnt}}</h4>
+                <button @click="change">点我</button>
+                <div>嵌套的div</div>
+            </div>
+        `,
+        data:function () {
+            return {
+                cnt:100,
+            }
+        },
+        methods:{
+          change(){
+              this.cnt--;
+          }
+        },
+        beforeCreate:function () {
+            console.log('beforeCreate:'+ this.cnt)
+
+        },
+        created:function () {
+            console.log('created:'+ this.cnt)
+        },
+    }
+
+    Vue.component('first',first)
+
+
+    new Vue({
+        el: '#d1',
+        data: {},
+    })
+
+</script>
+
+</body>
+</html>

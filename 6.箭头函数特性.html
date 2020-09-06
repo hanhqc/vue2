@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="d1">
+
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    let user = {
+        username:'哈哈',
+        app: function () {
+            console.log(this.username)
+        }
+    }
+    user.app()
+
+    let student = {
+        username:'嘻嘻',
+        app: function () {
+            setTimeout(function () {
+                console.log(this.username)
+            },1000)
+        }
+    }
+    student.app()
+
+
+    let employee = {
+        username:'呵呵',
+        app :function () {
+            setTimeout(() =>{
+                console.log(this.username)
+            },1000)
+        }
+    }
+    employee.app()
+
+
+
+</script>
+
+</body>
+</html>

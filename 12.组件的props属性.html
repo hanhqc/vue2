@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red {
+            color: red;
+        }
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="d1">
+
+    <com user="a"></com>
+    <com color="red" user="b"></com>
+    <com color="green" user="c"></com>
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    let com = {
+        template:`
+            <div :class="color">
+                局部组件
+            </div>
+        `,
+        props:['color','user'],
+        created:function () {
+            console.log(this.color,this.user)
+        }
+    }
+
+
+    new Vue({
+        el: '#d1',
+        data: {},
+        components:{
+            com:com
+        }
+    })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="d1">
+
+    <p id="p1">{{cnt}}</p>
+
+    <input type="button" value="修改数据" @click="change">
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#d1',
+        data: {
+            cnt:100,
+        },
+        methods:{
+            change(){
+                this.cnt--;
+            }
+        },
+
+        beforeCreate:function () {
+            console.log('beforeCreate:' + this.cnt)
+        },
+
+
+        created:function () {
+            console.log('created:' + this.cnt)
+        },
+
+        beforeMount:function () {
+            console.log('beforeMount:'+document.getElementById('p1').innerText)
+        },
+
+        mounted:function () {
+            console.log('mounted'+document.getElementById('p1').innerText)
+        },
+
+        beforeUpdate:function () {
+            console.log('beforeUpdate:'+this.cnt)
+            console.log('beforeUpdate:'+document.getElementById('p1').innerText)
+        },
+
+        updated:function () {
+            console.log('updated:'+this.cnt)
+            console.log('updated:'+document.getElementById('p1').innerText)
+        },
+
+        beforeDestroy:function () {
+            // console.log('beforeDestroy:'+this.cnt)
+            // console.log('beforeDestroy:'+document.getElementById('p1').innerText)
+        },
+
+        destroyed:function () {
+            // console.log('destroyed:'+this.cnt)
+            // console.log('destroyed:'+document.getElementById('p1').innerText)
+        },
+
+
+
+
+
+
+    })
+
+</script>
+
+</body>
+</html>

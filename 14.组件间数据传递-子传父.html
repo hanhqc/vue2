@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="d1">
+
+    父组件中的username：{{username}}
+    <br>
+    父组件中的age：{{age}}
+    <hr>
+    <com @btn="click1"></com>
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    let com = {
+        template:`
+            <div>
+                子组件：
+                <br>
+                用户名：<input type="text" v-model="name">
+                <br>
+                年龄：<input type="text" v-model="age">
+                <br>
+                <button @click="clickMe">点击</button>
+            </div>
+        `,
+        data:function(){
+            return {
+                'name':'',
+                'age':'',
+            }
+        },
+        methods:{
+            clickMe(){
+                this.$emit('btn',this.name,this.age)
+            }
+        }
+    }
+
+
+
+    new Vue({
+        el: '#d1',
+        data: {
+            username:'哈哈',
+            age:1,
+        },
+        components:{
+            com:com
+        },
+        methods: {
+            click1(name,age){
+                this.username = name;
+                this.age = Number(age)
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

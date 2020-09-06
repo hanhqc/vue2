@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="d1">
+
+    <com></com>
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    let com = {
+        template: `
+            <div>
+                这是一个组件
+                <h4>组件中的data:{{username}}</h4>
+            </div>
+        `,
+        data:function () {
+            return {username:'哈哈'}
+        },
+    }
+
+    Vue.component('com',com)
+
+
+    new Vue({
+        el: '#d1',
+        data: {
+            name:'嘻嘻',
+        },
+    })
+
+</script>
+
+</body>
+</html>
